@@ -1,4 +1,4 @@
-/build/
+/build/*
 !/build/project.hex
 /DebugConfig/
 /JLinkLog.txt
