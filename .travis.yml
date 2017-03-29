@@ -1,0 +1,10 @@
+language: c
+
+compiler: gcc
+
+script:
+    - make env_prepare
+    - make build
+
+before_install:
+    test -n $CC && unset CC
