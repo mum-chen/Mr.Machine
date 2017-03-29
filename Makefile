@@ -6,11 +6,12 @@ TOOL_CHAIN:= toolchain
 RT_THREAD:= rt-thread
 BUILD_DIR:= $(MR_ROOT)/$(RT_THREAD)/bsp/$(PRO_NAME)
 
-
 build:
-	rm -rf $(BUILD_DIR)
-	cp -rf $(MR_ROOT)/src $(BUILD_DIR)
-	cd $(BUILD_DIR); scons
+	. ./env.sh;				\
+	rm -rf $(BUILD_DIR);			\
+	cp -rf $(MR_ROOT)/src $(BUILD_DIR);	\
+	cd $(BUILD_DIR);			\
+	scons;
 
 .PHONY: env_prepare clean_env
 env_prepare:$(TOOL_CHAIN) $(RT_THREAD)

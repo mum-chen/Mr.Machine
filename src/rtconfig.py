@@ -8,11 +8,15 @@ CROSS_TOOL='gcc'
 if os.getenv('RTT_CC'):
     CROSS_TOOL = os.getenv('RTT_CC')
 
+
 # cross_tool provides the cross compiler
 # EXEC_PATH is the compiler execute path, for example, CodeSourcery, Keil MDK, IAR
 if  CROSS_TOOL == 'gcc':
     PLATFORM 	= 'gcc'
-    EXEC_PATH 	= r'/opt/rt-tool-chain/bin'
+    if os.getenv('TOOL_CHAIN_DIR'):
+        EXEC_PATH = "%s%s" % (os.getenv('TOOL_CHAIN_DIR'), 'bin')
+    else:
+        EXEC_PATH = r'/opt/rt-tool-chain/bin'
 elif CROSS_TOOL == 'keil':
     PLATFORM 	= 'armcc'
     EXEC_PATH 	= r'C:/Keil'
@@ -23,7 +27,7 @@ elif CROSS_TOOL == 'iar':
     exit(0)
 
 if os.getenv('RTT_EXEC_PATH'):
-	EXEC_PATH = os.getenv('RTT_EXEC_PATH')
+    EXEC_PATH = os.getenv('RTT_EXEC_PATH')
 
 BUILD = 'debug'
 STM32_TYPE = 'STM32F4XX'
