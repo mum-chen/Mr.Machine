@@ -1,10 +1,9 @@
-/build/*
-!/build/project.hex
-/DebugConfig/
-/JLinkLog.txt
-/JLinkSettings.ini
-/project.uvguix.*
-/project.uvoptx
+src/build/*
+src/DebugConfig/
+src/JLinkLog.txt
+src/JLinkSettings.ini
+src/project.uvguix.*
+src/project.uvoptx
 *.pyc
 /toolchain/*
 /rt-thread/*
