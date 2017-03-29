@@ -17,11 +17,11 @@ build:
 env_prepare:$(TOOL_CHAIN) $(RT_THREAD)
 
 $(TOOL_CHAIN):
-	tar -xjvf package/arm-2014.05-28-arm-none-eabi-i686-pc-linux-gnu.tar.bz2
+	tar -xjvf package/arm-2014.05-28-arm-none-eabi-i686-pc-linux-gnu.tar.bz2 > /dev/null
 	mv arm-2014.05 $(TOOL_CHAIN)
 
 $(RT_THREAD):
-	tar -xzvf package/rt-thread-2.1.0.tar.gz
+	tar -xzvf package/rt-thread-2.1.0.tar.gz > /dev/null
 	mv rt-thread-2.1.0 $(RT_THREAD)
 
 clean_env:
