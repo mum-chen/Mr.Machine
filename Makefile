@@ -1,5 +1,5 @@
-TOOL_CHAIN = "toolchain"
-RT_THREAD = "rt-thread"
+TOOL_CHAIN = toolchain
+RT_THREAD = rt-thread
 
 .PHONY: env_prepare clean_env
 env_prepare:$(TOOL_CHAIN) $(RT_THREAD)
