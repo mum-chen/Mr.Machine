@@ -14,7 +14,7 @@ if os.getenv('RTT_CC'):
 if  CROSS_TOOL == 'gcc':
     PLATFORM 	= 'gcc'
     if os.getenv('TOOL_CHAIN_DIR'):
-        EXEC_PATH = "%s%s" % (os.getenv('TOOL_CHAIN_DIR'), 'bin')
+        EXEC_PATH = os.getenv('TOOL_CHAIN_DIR')
     print EXEC_PATH
     # else:
     #    EXEC_PATH = r'/opt/rt-tool-chain/bin'
