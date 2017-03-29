@@ -15,8 +15,9 @@ if  CROSS_TOOL == 'gcc':
     PLATFORM 	= 'gcc'
     if os.getenv('TOOL_CHAIN_DIR'):
         EXEC_PATH = "%s%s" % (os.getenv('TOOL_CHAIN_DIR'), 'bin')
-    else:
-        EXEC_PATH = r'/opt/rt-tool-chain/bin'
+    print EXEC_PATH
+    # else:
+    #    EXEC_PATH = r'/opt/rt-tool-chain/bin'
 elif CROSS_TOOL == 'keil':
     PLATFORM 	= 'armcc'
     EXEC_PATH 	= r'C:/Keil'
