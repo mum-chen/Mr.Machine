@@ -1,14 +1,15 @@
 language: c
 
-compiler: gcc
+before_install:
+    test -n $CC && unset CC
 
-script:
+before_script:
     - make env_prepare
     - sudo ln -sf toolchain/bin/* /usr/bin/
     - . ./env.sh;
     - env
     - which arm-none-eabi-gcc
-    - cd src; scons
 
-before_install:
-    test -n $CC && unset CC
+script:
+    - scons -C src
+
