@@ -7,7 +7,7 @@ script:
     - sudo ln -sf toolchain/bin/* /usr/bin/
     - . ./env.sh;
     - env
-    - locate arm-none-eabi-gcc
+    - which arm-none-eabi-gcc
     - cd src; scons
 
 before_install:
