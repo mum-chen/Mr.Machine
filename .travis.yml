@@ -7,9 +7,7 @@ before_script:
     - make env_prepare
     - sudo ln -sf toolchain/bin/* /usr/bin/
     - . ./env.sh;
-    - env
-    - which arm-none-eabi-gcc
-
+    - "ln -sf `pwd`/toolchain /opt && export RTT_EXEC_PATH=/opt/toolchain/bin && /opt/toolchain/bin/arm-none-eabi-gcc --version || true"
 script:
     - scons -C src
 
