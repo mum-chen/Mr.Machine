@@ -5,11 +5,9 @@ compiler: gcc
 script:
     - make env_prepare
     - sudo ln -sf toolchain/bin/* /usr/bin/
-    - echo `pwd
-    - env
     - . ./env.sh;
     - env
-    - loacte arm-none-eabi-gcc
+    - locate arm-none-eabi-gcc
     - cd src; scons
 
 before_install:
